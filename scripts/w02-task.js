@@ -8,29 +8,27 @@ let fullName = "Jake Matheson";
 
 let currentYear = new Date(year);
 
-let profilePicture = URL('images/profile-pic.png');
+let profilePicture = 'images/profile-pic.png';
 
 
 /* Step 3 - Element Variables */
 
 const nameElement = document.getElementById('name');
 
-const foodElement = document.getElementById("#food");
+const foodElement = document.getElementById("food");
 
 const yearElement = document.querySelector("#year");
 
-const imageElement = URL('images/profile-pic.png');
 
 
 /* Step 4 - Adding Content */
 
 nameElement.innerHTML = '<strong>${fullName}</strong>';
 
+
 yearElement.textContent = currentYear;
 
-imageElement.setAttribute('src', profilePicture)
 
-imageElement.setAttribute('alt', 'Profile image of Jake Matheson')
 
 /* Step 5 - Array */
 
