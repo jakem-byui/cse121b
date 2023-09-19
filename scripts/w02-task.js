@@ -23,7 +23,7 @@ const imageElement = document.querySelector('img');
 
 /* Step 4 - Adding Content */
 
-nameElement.innerHTML = `<strong>${fullName}</strong>`
+nameElement.innerHTML = `<strong>${fullName}</strong>`;
 
 
 yearElement.textContent = currentYear;
