@@ -8,7 +8,7 @@ let fullName = "Jake Matheson";
 
 let currentYear = new Date(year);
 
-let profilePicture = 'images/profile-pic.png';
+let profilePicture = `images/profile-pic.png`;
 
 
 /* Step 3 - Element Variables */
@@ -19,25 +19,35 @@ const foodElement = document.getElementById("food");
 
 const yearElement = document.querySelector("#year");
 
-
+const imageElement = document.querySelector('img');
 
 /* Step 4 - Adding Content */
 
-nameElement.innerHTML = '<strong>${fullName}</strong>';
+nameElement.innerHTML = `<strong>${fullName}</strong>`
 
 
 yearElement.textContent = currentYear;
 
+imageElement.setAttribute('src', profilePicture);
 
+imageElement.setAttribute('alt', `Profile picture of ${fullName}`);
 
 /* Step 5 - Array */
 
-let favoriteFood = ["Chicken Tenders", "Fried Rice", "Banana Cake"];
+let favFood = ["Chicken Tenders", "Fried Rice", "Banana Cake"];
 
-foodElement.textContent = favoriteFood;
+foodElement.textContent = favFood;
 
-let favoriteFood2 = ["Grilled Tuna Sandwich"];
+let favFood2 = ["Grilled Tuna Sandwich"];
 
+favFood.push(favFood2);
 
+foodElement.innerHTML += `<br>${favFood}`;
 
+favFood.shift();
 
+foodElement.innerHTML += `<br>${favFood}`;
+
+favFood.pop();
+
+foodElement.innerHTML += `<br>${favFood}`;
