@@ -23,9 +23,9 @@
         <option value="normal">Normal</option>
     </select>
     
-    <div id="pokemon-list">
+    <ul id="pokemon-list">
         <!-- Pokémon cards will be displayed here -->
-    </div>
+    </ul>
 
     <div id="pokemon-popup" class="pokemon-popup">
         <h2 id="pokemon-name"></h2>
@@ -38,43 +38,6 @@
         &copy;<span id="year"></span> | CSE 121b | Final Project
     </footer>
     <script src="scripts/final-project.js"></script>
-    <script>
-        // Function to fetch and display the list of Pokémon
-        async function fetchPokemonList(type = "all") {
-            // ... (Your existing code for fetching and displaying the list)
-        }
 
-        // Function to display the Pokémon stats in the pop-up
-        function displayPokemonStats(pokemonData) {
-            const popup = document.getElementById("pokemon-popup");
-            const name = document.getElementById("pokemon-name");
-            const height = document.getElementById("pokemon-height");
-            const weight = document.getElementById("pokemon-weight");
-            const abilities = document.getElementById("pokemon-abilities");
-
-            name.textContent = pokemonData.name;
-            height.textContent = pokemonData.height;
-            weight.textContent = pokemonData.weight;
-            abilities.textContent = pokemonData.abilities.map(ability => ability.ability.name).join(', ');
-
-            popup.style.display = "block";
-        }
-
-        // Add an event listener to handle sprite clicks
-        document.addEventListener("click", async (event) => {
-            if (event.target.tagName === "IMG") {
-                const pokemonUrl = event.target.parentElement.querySelector("a").href;
-                const pokemonData = await fetchPokemonData(pokemonUrl);
-                displayPokemonStats(pokemonData);
-            }
-        });
-
-        // Function to hide the pop-up when the close button is clicked
-        const closePopupButton = document.getElementById("close-popup");
-        closePopupButton.addEventListener("click", () => {
-            const popup = document.getElementById("pokemon-popup");
-            popup.style.display = "none";
-        });
-    </script>
 </body>
 </html>
